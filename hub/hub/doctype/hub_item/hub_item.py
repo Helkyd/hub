@@ -56,7 +56,8 @@ class HubItem(WebsiteGenerator):
 
 	def save_image_locally(self):
 		if self.image and self.image.startswith('http'):
-			image_file = save_remote_file_locally(self.image, self.doctype, self.name)
+			#HELKYDs 21-03-2022; changed self.image to self.image_list
+			image_file = save_remote_file_locally(self.image_list, self.doctype, self.name)
 			if image_file:
 				self.image = image_file.file_url
 			else:
